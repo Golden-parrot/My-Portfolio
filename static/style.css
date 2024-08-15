@@ -11,7 +11,6 @@
   #particles-js{
     width: 100%;
     height: 100%;
-    
    position: absolute;
     z-index: 1;
   }
@@ -26,7 +25,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     position: sticky;
     width: 100%;
     position:-webkit-sticky;
@@ -40,21 +38,18 @@
   color: #ff004f;
   text-transform: uppercase;
  }
- .logo{
-   width: 140px;
 
- }
-
- nav ul li{
-    display: inline-block;
+ nav ul {
+    display: flex;
     list-style: none;
-    margin: 10px 20px;
+  
  }
  nav ul li a{
     color: #fff !important;
     text-decoration: none;
-    font-size: 18px;
+    font-size: clamp(16px,4vw,22px);
     position: relative;
+    margin: 10px 20px;
     }
     nav ul li a::before{
          content: '';
@@ -109,7 +104,7 @@
   
 }
   #about{
-    padding: 130px 0;
+    padding: 6% 0;
     color: #ababab; 
     min-height: 700px;
   }
@@ -129,6 +124,9 @@
   .about-col-2{
     flex-basis: 60%;
     
+  }
+  .about-col-2 p{
+    text-align: justify;
   }
 
 .sub-title{
@@ -168,7 +166,7 @@
 }
 .tab-contents ul li span{
   color: #b54769;
-  font-size: 40px;
+  font-size: clamp(25px,4vw,38px);
 }
 .fa-html5 { color: #E34F26; } .fa-css3-alt { color: #1572B6; } .fa-js { color: #F7DF1E; } .fa-python { color: #3776AB; } .fa-database { color: #4479A1; } .fa-leaf { color: #47A248; } .fa-node-js { color: #339933; } .wordpress-icon { color: #21759B; } .blogger-icon { color: #FF5722; } .seo-icon { color: #5EBA7D; }
 
@@ -195,40 +193,38 @@
 
 }
  #projects{
-  padding: 100px 0;
+  padding: 6% 0;
 
  }
  .projects-list{
   display: flex;
-  grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
-  grid-gap: 40px;
-  margin-top: 50px;
- }
- .projects-list div{
-  background: #262626;
+  gap: 50px;
+  margin-top: 20px;
+  flex-wrap: wrap;
   padding: 40px;
-  font-size: 13px;
+  font-size: clamp(18px,4vw,22px);
   font-weight: 300;
-  border-radius: 10px;
   transition: background 0.5s, transform 0.5s;
-  position: relative;
   background: #ff004f;
 
  }
- .projects-list div i{
+.projects-list-content{
+  flex: 1;
+}
+ .projects-list-content  i{
   font-size: 50px;
   margin-bottom: 30px;
    
  }
- .projects-list div h2{
+ .projects-list-content  h2{
   font-size: 30px;
   font-weight: 500;
   margin-bottom: 15px;
  }
- .projects-list div  p{
+ .projects-list-content  p{
   font-size: 18px;
  }
- .projects-list div a button{
+ .projects-list-content  a button{
   text-decoration: none;
   color: #b54769;
   font-size: 16px;
@@ -238,24 +234,22 @@
   padding: 4px 8px;
   border: 2px solid #262626;
   border-radius: 3px;
-  
-
  }
- .projects-list div:hover{
+.projects-list:hover{
   transform: translateY(-10px);
 
  }
- .projects-list img{
+ .projects-list  div img{
   border: 3px solid #b54769;
   border-radius: 5px;
   padding: 5px;
-  box-shadow: 0px 5px 8px ;
   box-shadow: 0px 2px 5px rgb(255, 0, 79,0.4),
   0px 3px 7px rgb(255, 0, 79,0.4);
   transition: 0.3s;
+width: 100%;
  }
  
- .projects-list img:hover{
+ .projects-list div img:hover{
   transform: scale(1.04);
  }
  #portfolio{
@@ -429,12 +423,22 @@ footer a{
 }
 
 @media screen and (max-width:786px) {
+  nav {
+    flex-direction: column;
+  }
   #header{
     display: none;
   }
-  nav ul {
-    display: none;
+  #particles-js{
+    z-index: -1;
+  }
+  .about-col-1{
+ flex-basis: 100%;
+  }
+  .about-col-2{
+    flex-basis: 100%;
+  }
+  .projects-list{
     flex-direction: column;
   }
-
 }
