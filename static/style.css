@@ -197,34 +197,35 @@
 
  }
  .projects-list{
-  display: flex;
-  gap: 50px;
+display: flex;
   margin-top: 20px;
-  flex-wrap: wrap;
-  padding: 40px;
+  padding: 20px;
   font-size: clamp(18px,4vw,22px);
   font-weight: 300;
   transition: background 0.5s, transform 0.5s;
   background: #ff004f;
+  gap: 40px;
 
  }
-.projects-list-content{
-  flex: 1;
+.project-content{
+  width: 100%;
+
 }
- .projects-list-content  i{
+ .project-content  i{
   font-size: 50px;
   margin-bottom: 30px;
    
  }
- .projects-list-content  h2{
+ .project-content  h2{
   font-size: 30px;
   font-weight: 500;
   margin-bottom: 15px;
  }
- .projects-list-content  p{
+ .project-content  p{
   font-size: 18px;
+  text-align: justify;
  }
- .projects-list-content  a button{
+ .project-content  a button{
   text-decoration: none;
   color: #b54769;
   font-size: 16px;
@@ -239,8 +240,7 @@
   transform: translateY(-10px);
 
  }
- .projects-list  div img{
-  border: 3px solid #b54769;
+ .projects-list  img{
   border-radius: 5px;
   padding: 5px;
   box-shadow: 0px 2px 5px rgb(255, 0, 79,0.4),
@@ -248,18 +248,17 @@
   transition: 0.3s;
 width: 100%;
  }
- 
- .projects-list div img:hover{
+ .projects-list  img:hover{
   transform: scale(1.04);
  }
  #portfolio{
-  padding: 80px 0;
+  padding: 6% 0;
  }
 .achievements-list{
   display: flex;
-  grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
   grid-gap: 40px;
   margin-top: 50px;
+flex-wrap: wrap;
 
 }
 .achievements{
@@ -272,6 +271,7 @@ width: 100%;
   border-radius: 10px;
   display: block;
   transition: transform 0.5s;
+  width: 100%;
 }
 .layer{
   width: 100%;
@@ -423,6 +423,13 @@ footer a{
 }
 
 @media screen and (max-width:786px) {
+  #particles-js{
+    display: none;
+  }
+  html{
+    overflow-x: hidden;
+  }
+  
   nav {
     flex-direction: column;
   }
@@ -440,5 +447,11 @@ footer a{
   }
   .projects-list{
     flex-direction: column;
+  }
+  .achievements-list{
+    flex-direction: column;
+  }
+  .contact-left,.contact-right{
+    flex-basis: 100%;
   }
 }
